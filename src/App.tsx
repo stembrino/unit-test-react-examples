@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import CounterPanel from "./components/CounterPanel/CounterPanel";
 import Header from "./components/Header/Header";
-import WrapProviders from "./store/WrapProviders";
+import WrapProviders from "./context/WrapProviders";
 
 function App() {
   return (

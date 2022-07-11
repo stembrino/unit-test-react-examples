@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { CounterPanelContext } from "../../store/counter-panel-store/CounterPanelProvider";
+import { CounterPanelContext } from "../../context/counter-panel-context/CounterPanelProvider";
 import Button from "../UI/Button";
 
 const Header = () => {
   const counterPanelContext = useContext(CounterPanelContext);
   const clickHandler = () => {
-    counterPanelContext.addValue(1);
+    counterPanelContext.addValue(5);
   };
   return (
     <div>

@@ -1,4 +1,4 @@
-import CounterPanelProvider from "./counter-panel-store/CounterPanelProvider";
+import CounterPanelProvider from "./counter-panel-context/CounterPanelProvider";
 
 const WrapProviders = (props: { children: JSX.Element }) => {
   return <CounterPanelProvider>{props.children}</CounterPanelProvider>;

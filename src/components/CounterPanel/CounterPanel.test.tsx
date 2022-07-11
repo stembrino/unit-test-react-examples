@@ -1,29 +1,31 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
+import CounterPanelProvider from "../../context/counter-panel-context/CounterPanelProvider";
+import WrapProviders from "../../context/WrapProviders";
 import CounterPanel from "./CounterPanel";
 
 describe("<CounterPanel />", () => {
   describe("Simple Test with useContext mocked", () => {
-    const mockAddValue = jest.fn();
-
-    beforeAll(() => {
-      // @ts-ignore
-      React.useContext = () => {
-        return { panelValue: "test", addValue: mockAddValue };
-      };
-    });
-
     test("should contain the expected label", async () => {
-      render(<CounterPanel />);
-      expect(screen.getByRole("displayvalue").textContent).toBe("test");
+      render(
+        <CounterPanelProvider>
+          <CounterPanel />
+        </CounterPanelProvider>
+      );
+      expect(screen.getByRole("displayvalue").textContent).toBe("0");
     });
 
     test("should increase value when add button is clicked", async () => {
-      render(<CounterPanel />);
-      expect(mockAddValue).not.toBeCalled();
+      render(
+        <WrapProviders>
+          <CounterPanel />
+        </WrapProviders>
+      );
       const buttonElement = screen.getByRole("button");
       fireEvent.click(buttonElement);
-      expect(mockAddValue).toBeCalledTimes(1);
+      expect(screen.getByRole("displayvalue").textContent).toBe("1");
+      fireEvent.click(buttonElement);
+      expect(screen.getByRole("displayvalue").textContent).toBe("2");
     });
   });
 });

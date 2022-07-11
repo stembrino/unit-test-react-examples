@@ -32,7 +32,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/src/reportWebVitals.ts",
-      "/src/index.tsx"
+      "/src/index.tsx",
+      "/src/App.tsx"
     ]
   },
   "eslintConfig": {
