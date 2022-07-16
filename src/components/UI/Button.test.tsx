@@ -22,9 +22,9 @@ describe("Simple Test Button", () => {
 
   test("should click handle be called when the button is clicked", async () => {
     const { buttonElement, mockOnClickHandler } = setUp();
+
     expect(mockOnClickHandler).not.toBeCalled();
     fireEvent.click(buttonElement);
-
     expect(mockOnClickHandler).toBeCalledTimes(1);
   });
 });

@@ -21,8 +21,8 @@ describe("<Header />", () => {
 
     test("should incrment the target value", () => {
       const { buttonElement, mockAddValue } = setUp();
-      render(<Header />);
       fireEvent.click(buttonElement);
+
       expect(mockAddValue).toHaveBeenCalledWith(5);
       expect(mockAddValue).toBeCalledTimes(1);
     });
