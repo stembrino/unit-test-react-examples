@@ -1,10 +1,15 @@
 type Props = {
   label: string;
-  clickHandler: () => void;
+  onClick: () => void;
+  ariaLabel?: string;
 };
 
-const Button = ({ label, clickHandler }: Props) => {
-  return <button onClick={clickHandler}>{label}</button>;
+const Button = ({ label, onClick, ariaLabel }: Props) => {
+  return (
+    <button onClick={onClick} aria-label={ariaLabel}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;

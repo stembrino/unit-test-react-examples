@@ -9,7 +9,7 @@ const Header = () => {
   };
   return (
     <div>
-      <Button label="ADD FROM HEADER" clickHandler={clickHandler} />
+      <Button label="ADD FROM HEADER" onClick={clickHandler} />
     </div>
   );
 };

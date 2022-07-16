@@ -10,8 +10,8 @@ const CounterPanel = () => {
   };
   return (
     <div>
-      <div role="displayvalue">{counterPanelContext.panelValue}</div>
-      <Button clickHandler={addValueHandler} label="ADD" />
+      <div aria-label="display">{counterPanelContext.panelValue}</div>
+      <Button onClick={addValueHandler} label="ADD" ariaLabel="add value button" />
     </div>
   );
 };
