@@ -3,6 +3,7 @@ import "./App.css";
 import CounterPanel from "./components/CounterPanel/CounterPanel";
 import Header from "./components/Header/Header";
 import WrapProviders from "./context/WrapProviders";
+import Home from "./screens/Home";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </header>
         <main className="mian-content">
           <CounterPanel />
+          <hr></hr>
+          <h3>User List</h3>
+          <Home />
         </main>
       </div>
     </WrapProviders>

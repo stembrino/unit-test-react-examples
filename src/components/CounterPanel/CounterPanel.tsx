@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CounterPanelContext } from "../../context/counter-panel-context/CounterPanelProvider";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 // import classes from "./CounterPanel.module.css";
 
 const CounterPanel = () => {

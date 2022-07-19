@@ -44,7 +44,6 @@ describe("<CounterPanel />", () => {
     test("should increase value when add button is clicked", async () => {
       const { buttonElement, displayElement } = setUp();
       fireEvent.click(buttonElement);
-
       expect(displayElement.textContent).toBe("1");
       fireEvent.click(buttonElement);
       expect(displayElement.textContent).toBe("2");
