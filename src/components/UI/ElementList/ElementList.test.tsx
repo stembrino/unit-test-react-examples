@@ -10,6 +10,6 @@ describe("<ElementList />", () => {
 
   it("Should text be test", () => {
     const { liElement } = setUp();
-    expect(liElement.textContent).toBe("test");
+    expect(liElement.textContent).toBe("test | test@test");
   });
 });

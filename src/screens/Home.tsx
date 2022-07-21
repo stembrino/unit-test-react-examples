@@ -1,25 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Loading } from "../components/Loading/Loading";
 import ElementList from "../components/UI/ElementList/ElementList";
-import { Injection } from "../tools/Injection";
+import { useUserContext } from "../context/user-context/UserProvider";
 
-const userService = Injection.injectUserService();
 let didMount = false;
 
 const Home = () => {
-  const [users, setUsers] = useState([] as any[]);
+  const { fetchUsers, users } = useUserContext();
 
   useEffect(() => {
     if (didMount) return;
     console.log("rendered home");
 
-    (async () => {
-      const usersName = await userService.getUsers();
-      setUsers(usersName);
-    })();
+    fetchUsers();
     return () => {
       didMount = true;
     };
-  }, []);
+  }, [fetchUsers]);
 
   const UserNamesElement = users.map((user) => (
     <ElementList key={user.id} text={user.username} email={user.email} />
@@ -27,7 +24,7 @@ const Home = () => {
 
   return (
     <div>
-      <span>{UserNamesElement}</span>
+      <span>{users.length > 0 ? UserNamesElement : <Loading />}</span>
     </div>
   );
 };

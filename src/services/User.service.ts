@@ -5,7 +5,9 @@ class UserService {
 
   public getUsers = async () => {
     console.debug("INFO: the function getUsers has been called");
-    return await Request.get(this.GET_USERS_URL);
+    const users = await Request.get(this.GET_USERS_URL);
+    console.debug("HELLO");
+    return users;
   };
 }
 

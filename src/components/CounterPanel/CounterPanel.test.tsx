@@ -19,7 +19,7 @@ describe("<CounterPanel />", () => {
       };
     };
 
-    test("should contain the expected label", async () => {
+    test("should contain the expected label", () => {
       const { displayElement } = setUp();
       expect(displayElement.textContent).toBe("0");
     });
@@ -41,7 +41,7 @@ describe("<CounterPanel />", () => {
         displayElement,
       };
     };
-    test("should increase value when add button is clicked", async () => {
+    test("should increase value when add button is clicked", () => {
       const { buttonElement, displayElement } = setUp();
       fireEvent.click(buttonElement);
       expect(displayElement.textContent).toBe("1");
